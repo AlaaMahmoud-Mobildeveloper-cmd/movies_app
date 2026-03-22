@@ -27,6 +27,7 @@ dependencies:
   get_it: ^9.2.1
   provider: ^6.1.5+1
 
+  easy_localization: ^3.0.8
 
   carousel_slider: ^5.1.2
   flutter_screenutil: ^5.9.3
@@ -40,7 +41,6 @@ dependencies:
 
   auto_route: ^11.1.0
   google_sign_in: ^6.2.0
-
 
 
 

@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:moves_final_project/core/resources/auto_route.gr.dart';
 import 'package:moves_final_project/core/resources/colors_app.dart';
 import 'package:moves_final_project/features/auth/presentation/login_screen.dart';
 import 'package:provider/provider.dart';
