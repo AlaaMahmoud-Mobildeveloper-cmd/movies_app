@@ -296,7 +296,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 height: 40.h,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: context.locale.languageCode == "en"
+                                  color: (context.locale?.languageCode ?? 'en') == "en"
                                       ? Colors.amber
                                       : Colors.transparent,
                                 ),
@@ -318,10 +318,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 height: 40.h,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: context.locale.languageCode == "ar"
-                                      ? Colors.amber
-                                      : Colors.transparent,
-                                ),
+                                  color: (context.locale?.languageCode ?? 'en') == "ar"
+                                    ? Colors.amber
+                                    : Colors.transparent,
+                              ),
                                 padding: EdgeInsets.all(2.r),
                                 child: const CircleAvatar(
                                   backgroundImage: AssetImage('assets/images/EG.png'),

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:moves_final_project/core/resources/app_string.dart';
 import 'package:moves_final_project/core/resources/auto_route.gr.dart';
+import 'package:moves_final_project/core/resources/cache_helper.dart';
 import 'package:moves_final_project/core/resources/image&icon.dart';
 import 'package:moves_final_project/features/auth/presentation/login_screen.dart';
 
@@ -136,7 +137,7 @@ class MoviesIntroScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () async {
                       if (isLastPage && context != null) {
-
+                        CacheHelper.getBool("introduction");
                         context.pushRoute(LoginRoute());
 
                       } else {
@@ -172,9 +173,9 @@ class MoviesIntroScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12)),
                       ),
-                      child: const Text(
-                        "text Back",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      child: Text(
+                        "text Back".tr(),
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),

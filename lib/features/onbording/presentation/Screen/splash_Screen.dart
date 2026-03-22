@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:moves_final_project/core/resources/app_string.dart';
 import 'package:moves_final_project/core/resources/auto_route.gr.dart';
+import 'package:moves_final_project/core/resources/cache_helper.dart';
 import 'package:moves_final_project/core/resources/image&icon.dart';
 import 'package:moves_final_project/features/onbording/presentation/Screen/Onboarding.dart';
 
@@ -82,9 +83,11 @@ class _SplashscreenState extends State<Splashscreen> {
   }
 
   void getNext() {
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () async {
       if (!mounted) return;
-      context.pushRoute(MoviesIntroRoute());
+       CacheHelper.saveBool ==true
+          ? context.pushRoute(MoviesIntroRoute())
+          :context.pushRoute(LoginRoute());
     });
   }
 }

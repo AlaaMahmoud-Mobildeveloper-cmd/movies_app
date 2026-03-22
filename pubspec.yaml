@@ -61,5 +61,6 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/translations/
 
 
