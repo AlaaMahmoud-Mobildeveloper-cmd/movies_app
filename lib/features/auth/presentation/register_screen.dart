@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moves_final_project/Widgets/AppDecorations.dart';
-import 'package:moves_final_project/core/resources/app_string.dart';
 import 'package:moves_final_project/core/resources/auto_route.gr.dart';
 import 'package:moves_final_project/core/resources/firebase_functions.dart';
 import 'package:moves_final_project/features/auth/providers/auth_provider.dart';
 import 'package:provider/provider.dart';
-import 'login_screen.dart';
+
 
 @RoutePage()
 class RegisterScreen extends StatefulWidget {
@@ -157,8 +156,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controller: nameController,
                     style: const TextStyle(color: Colors.white),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return "Please enter your name";
+                      }
                       return null;
                     },
                     decoration:AppDecorations.customInputDecoration(
@@ -174,10 +174,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controller: emailController,
                     style: const TextStyle(color: Colors.white),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return "Please enter your Email";
+                      }
                       final bool emailValid = RegExp(
-                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                        r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)",
                       ).hasMatch(value);
                       if (!emailValid) return "Please enter a valid email";
                       return null;
@@ -197,8 +198,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscureText: !isPasswordVisible,
                     style: const TextStyle(color: Colors.white),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return "Please enter your Password";
+                      }
                       return null;
                     },
                     decoration: AppDecorations.customInputDecoration(
@@ -225,10 +227,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscureText: !isConfirmPasswordVisible,
                     style: const TextStyle(color: Colors.white),
                     validator: (value) {
-                      if (value == null || value.isEmpty)
+                      if (value == null || value.isEmpty) {
                         return "Please enter your rePassword";
-                      if (value != passwordController.text)
+                      }
+                      if (value != passwordController.text) {
                         return "Password not matched";
+                      }
                       return null;
                     },
                     decoration: AppDecorations.customInputDecoration(
